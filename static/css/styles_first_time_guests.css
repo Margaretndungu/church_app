@@ -1,0 +1,71 @@
+/* General styles for headings and paragraphs */
+h2,
+h3,
+p {
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 18px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Specific styles for the content in first_time_guests.html */
+.welcome-message {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0066cc; /* Blue color */
+    margin-bottom: 16px;
+}
+
+.what-to-expect,
+.get-connected,
+.need-prayer,
+.stay-in-touch {
+    margin-bottom: 24px;
+}
+
+.get-connected-options {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+/* Styles for links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+}
+

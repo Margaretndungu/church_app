@@ -1,0 +1,78 @@
+/* styles_churches_list.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.tab:hover {
+    background-color: #004494;
+}
+
+.tab.active {
+    background-color: #003366;
+}
+
+.content {
+    display: none;
+    margin-top: 20px;
+}
+
+.content.active {
+    display: block;
+}
+
+#media-content-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#media-content-text li {
+    margin-bottom: 10px;
+}
+
+#media-content-text a {
+    color: #0056b3;
+}
+
+#media-content-text a:hover {
+    text-decoration: underline;
+}
+
+#church-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#church-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+

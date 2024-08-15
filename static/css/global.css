@@ -1,0 +1,91 @@
+/* global.css */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    background-color: #333; /* Dark background color for the navigation bar */
+    padding: 10px; /* Padding around navigation links */
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center align navigation links */
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust spacing between list items */
+}
+
+nav ul li a {
+    color: #fff; /* White text color for navigation links */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for better touch/click area */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.tab:hover {
+    background-color: #004494;
+}
+
+.tab.active {
+    background-color: #003366;
+}
+
+.content {
+    display: none;
+    margin-top: 20px;
+}
+
+.content.active {
+    display: block;
+}
+
