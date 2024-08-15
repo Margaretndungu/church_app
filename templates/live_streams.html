@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Church App - Live Streams{% endblock %}
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles_live_stream.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="live-stream">
+    <h2>Live Stream</h2>
+      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F3697338907144241%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+      
+      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F1112178270001562%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+      
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fposts%2Fpfbid0MqSYCP9Rdfmh2K2ghaDFXoAk1VN9fDyoRywqb9tfkzrvFmuJcL36HLWdRxvwWxSQl&show_text=true&width=500&is_preview=true" width="500" height="590" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+	                   
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F966031691721426%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F991404645888098%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F26412845441662322%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>                                              
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F1091970125222209%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>                        
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F405002749023904%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> 
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F1634622340409623%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>              
+	  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fposts%2Fpfbid0nSGgYEkvnSstCBLiAXkcixDqbeN9AGvjtFAQFPLmh1kKJzt2GBHNnMp7yNN3g1aCl&show_text=true&width=500&is_preview=true" width="500" height="610" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+
+</section>
+
+<section class="recorded-videos">
+    <h2>Recorded Videos</h2>
+    <ul>
+        {% for video in recorded_videos %}
+            <li><a href="{{ video }}">{{ video }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
+
+

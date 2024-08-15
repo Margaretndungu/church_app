@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Church App - Events{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Upcoming Events</h1>
+    <div class="card">
+        <ul>
+            {% for date, event in events.items() %}
+                <li>{{ date }}: {{ event }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+

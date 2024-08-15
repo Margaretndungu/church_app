@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Church App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+    {% block additional_css %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('live_streams') }}">Live Streams</a></li>
+            <li><a href="{{ url_for('churches') }}">Churches</a></li>
+            <li><a href="{{ url_for('page4') }}">Page 4</a></li>
+            <li><a href="{{ url_for('donation_form') }}">Donation Form</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
+

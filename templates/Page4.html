@@ -1,0 +1,57 @@
+ {% extends "base.html" %}
+
+{% block title %}Church App - Page 4{% endblock %}
+{% block additional_css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles_page4.css') }}">
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1>Latest Messages</h1>
+    <ul>
+        <li><a href="#" id="messages-link">Messages</a></li>
+        <div id="messages-content" class="hidden">
+            
+            <!-- Facebook video iframe -->
+            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHeavenBoundTelevision%2Fvideos%2F997674745187268%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            <div class="card">
+                <ul>
+                    {% for message in messages %}
+                        <li>
+                            {% if loop.first %}
+                                <strong>{{ message.title }}</strong><br>
+                                Time: {{ message.time }}<br>
+                                Details: {{ message.details }}<br>
+                                <a href="{{ message.live_stream_link }}">Watch live stream</a>
+                            {% else %}
+                                {{ message.title }} - Time: {{ message.time }} - Details: {{ message.details }}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <li><a href="#" id="events-link">Events</a></li>
+        <div id="events-content" class="hidden">
+            <h2>Upcoming Events</h2>
+            <div class="card">
+                <ul>
+                    {% for date, event in events.items() %}
+                        <li>{{ date }}: {{ event }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <li><a href="#" id="live-stream-link">Live Stream (Facebook)</a></li>
+        <div id="live-stream-content" class="hidden">
+            <h2>Live Stream</h2>
+            <div class="live-stream">
+                <p>You can watch the live stream on our Facebook page:</p>
+                <p><a href="https://web.facebook.com/HeavenBoundTelevision">HeavenBoundTelevision Facebook Page</a></p>
+            </div>
+        </div>
+    </ul>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

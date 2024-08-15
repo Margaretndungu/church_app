@@ -1,0 +1,30 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Church App - Home{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="banner">
+        <img src="{{ url_for('static', filename='banner2.jpg') }}" alt="Church banner image" class="banner-image">
+        <div class="banner-text">
+            <h2>WELCOME TO PEFA KIMBO</h2>
+        </div>
+    </section>
+
+    <section class="welcome-message">
+        <p>Our goal is to help you grow in your relationship with God.</p>
+        <p>We trust that growing in faith involves engaging with His Word and fostering relationships with others. We thrive together! Connect with our groups and teams to strengthen your bonds and spiritual walk.</p>
+    </section>
+
+    <section class="about-us">
+        <p><a href="{{ url_for('first_time_guests') }}">First Time Guests</a></p>
+        <p><a href="{{ url_for('prayer_request') }}">Prayer Request</a></p>
+        <p><a href="{{ url_for('who_are_we') }}">Who Are We</a></p>
+        <p><a href="{{ url_for('about_us') }}">About Us</a></p>
+    </section>
+{% endblock %}
+

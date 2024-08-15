@@ -1,0 +1,40 @@
+<!-- templates/prayer_request.html -->
+{% extends 'base.html' %}
+
+{% block title %}Prayer Request{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_prayer_request.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>Prayer Request</h2>
+    <p>We believe in the power of prayer. Submit your prayer requests here, and our prayer team will pray for you.</p>
+
+    <form method="POST" action="{{ url_for('prayer_request') }}">
+        <div class="form-group">
+            <label for="name">Your Name (optional):</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email (optional):</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="prayer_request">Prayer Request:</label>
+            <textarea id="prayer_request" name="prayer_request" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <!-- Optionally, display previously submitted prayer requests -->
+    {% if prayer_requests %}
+        <h3>Recent Prayer Requests:</h3>
+        <ul>
+            {% for request in prayer_requests %}
+                <li>{{ request }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
+

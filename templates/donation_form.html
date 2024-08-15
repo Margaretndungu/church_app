@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Donation Form{% endblock %}
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='donation_form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Donation Form</h1>
+    <form id="donation_form">
+        <label for="donation_amount">Donation Amount:</label><br>
+        <input type="number" id="donation_amount" name="donation_amount" placeholder="Enter amount" required><br>
+        
+        <label for="payment_method">Payment Method:</label><br>
+        <select id="payment_method" name="payment_method" required>
+            <option value="" disabled selected>Select Payment Method</option>
+            <option value="M-Pesa">M-Pesa: 0710 210 400</option>
+            <option value="Paybill">Paybill: 4051355 (Acc name: HEAVEN BOUND TV)</option>
+        </select><br>
+        
+        <button type="submit">Donate</button>
+    </form>
+</div>
+{% endblock %}
+

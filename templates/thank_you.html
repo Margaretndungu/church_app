@@ -1,0 +1,11 @@
+<!-- templates/thank_you.html -->
+{% extends 'base.html' %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+    <h2>Thank You!</h2>
+    <p>Your prayer request has been submitted successfully. Our prayer team will pray for you.</p>
+    <p>Feel free to <a href="{{ url_for('home') }}">return to the homepage</a> or explore more of our site.</p>
+{% endblock %}
+

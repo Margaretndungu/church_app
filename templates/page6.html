@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Church App - Page 6{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Latest Messages</h1>
+    <ul>
+        {% for message in messages %}
+            <li>
+                {% if loop.first %}
+                    <strong>{{ message.title }}</strong><br>
+                    Time: {{ message.time }}<br>
+                    Details: {{ message.details }}<br>
+                    <a href="{{ message.live_stream_link }}">Watch live stream</a>
+                {% else %}
+                    {{ message.title }} - Time: {{ message.time }} - Details: {{ message.details }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+

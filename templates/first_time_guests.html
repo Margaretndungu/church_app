@@ -1,0 +1,28 @@
+<!-- templates/first_time_guests.html -->
+{% extends 'base.html' %}
+
+{% block title %}First Time Guests{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_first_time_guests.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>Welcome to PEFA Kimbo!</h2>
+    <p>We're so glad you're here! Whether it's your first time or you're visiting again, we want you to feel at home.</p>
+
+    <h3>What to Expect</h3>
+    <p>Our services are filled with uplifting worship, inspiring messages, and a welcoming community ready to greet you.</p>
+
+    <h3>Get Connected</h3>
+    <p>Join a small group, attend our events, or volunteer with us. There are many ways to get involved and meet new people.</p>
+
+    <h3>Need Prayer?</h3>
+    <p>We're here for you. Submit your prayer requests and our team will keep you in their prayers.</p>
+
+    <h3>Stay in Touch</h3>
+    <p>Follow us on social media and use our app to stay updated on events and news. We look forward to seeing you again!</p>
+
+    <p>Thank you for visiting. We hope to see you soon!</p>
+{% endblock %}
+

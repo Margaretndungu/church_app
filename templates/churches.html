@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Churches List{% endblock %}
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles_churches_list.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Media tab -->
+    <div class="tab" id="media-tab" onclick="toggleContent('media-content', 'media-tab')">Media Content</div>
+    <!-- Church list tab -->
+    <div class="tab" id="church-tab" onclick="toggleContent('church-content', 'church-tab')">Churches List</div>
+</div>
+
+<!-- Media content -->
+<div id="media-content" class="content">
+    <div id="media-content-text">
+        <ul>
+            <li><a href="https://web.facebook.com/pefakimboallnations" target="_blank">PEFA KIMBO - PEFA Kimbo All Nations</a></li>
+            <li><a href="https://web.facebook.com/pefagithuraicathedral" target="_blank">PEFA CATHEDRAL - Githurai 44</a></li>
+            <li><a href="https://web.facebook.com/PEFAClaycity" target="_blank">PEFA CLAYCITY - Clay city</a></li>
+            <li><a href="https://web.facebook.com/pefachurchmwihokoofficial" target="_blank">PEFA MWIHOKO - Mwihoko</a></li>
+            <li><a href="https://web.facebook.com/profile.php?id=100075679970942" target="_blank">PEFA FINANCE - Finance</a></li>
+            <li><a href="https://web.facebook.com/pefa.church.infinity" target="_blank">PEFA INFINITY - Infinity</a></li>
+            <li><a href="https://web.facebook.com/PEFAGikombaChurch" target="_blank">PEFA GIKOMBA - Gikomba</a></li>
+            <li><a href="https://web.facebook.com/OfficialPefaThikaRd" target="_blank">PEFA THIKA ROAD - Roysambu</a></li>
+            <li><a href="https://web.facebook.com/pefacathedralruiruofficial" target="_blank">PEFA CATHEDRAL - Ruiru</a></li>
+            <li><a href="https://web.facebook.com/pefa.kahawawest" target="_blank">PEFA KAHAWAWEST - Kahawa west</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- List of churches content -->
+<div id="church-content" class="content active">
+    <ul id="church-list">
+        <!-- Church list will be populated here -->
+    </ul>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+    function toggleContent(contentId, tabId) {
+        var content = document.getElementById(contentId);
+
+        if (content.classList.contains('active')) {
+            // Content is already active, return
+            return;
+        }
+
+        // Toggle active class for contents
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.classList.remove('active'));
+        content.classList.add('active');
+
+        // Toggle active class for tabs
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+    }
+
+    // Initially hide the media content
+    document.getElementById('media-content').classList.remove('active');
+
+    // Fetch list of churches from Flask backend
+    fetch('/api/churches')
+        .then(response => response.json())
+        .then(data => {
+            var churchList = document.getElementById('church-list');
+            data.forEach(church => {
+                var li = document.createElement('li');
+                li.textContent = church.name + ' - ' + church.location;
+                li.addEventListener('click', function() {
+                    // Update the active tab to the media tab
+                    var mediaTab = document.getElementById('media-tab');
+                    var churchTab = document.getElementById('church-tab');
+                    mediaTab.classList.add('active');
+                    churchTab.classList.remove('active');
+
+                    // Show the media content and hide the church content
+                    var mediaContent = document.getElementById('media-content');
+                    var churchContent = document.getElementById('church-content');
+                    mediaContent.classList.add('active');
+                    churchContent.classList.remove('active');
+                });
+                churchList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error fetching churches:', error));
+</script>
+{% endblock %}
+
